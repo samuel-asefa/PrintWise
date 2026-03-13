@@ -133,7 +133,10 @@ const App: React.FC = () => {
 
           <div className="sliders-container">
             <div className="slider-group">
-              <label className="label">Strength: {requirements.strength}/10</label>
+              <div className="slider-header">
+                <span className="label">Strength</span>
+                <span className="slider-value">{requirements.strength}/10</span>
+              </div>
               <input
                 type="range"
                 min="1"
@@ -145,7 +148,10 @@ const App: React.FC = () => {
             </div>
 
             <div className="slider-group">
-              <label className="label">Flexibility: {requirements.flexibility}/10</label>
+              <div className="slider-header">
+                <span className="label">Flexibility</span>
+                <span className="slider-value">{requirements.flexibility}/10</span>
+              </div>
               <input
                 type="range"
                 min="1"
@@ -157,7 +163,10 @@ const App: React.FC = () => {
             </div>
 
             <div className="slider-group">
-              <label className="label">Detail: {requirements.detail}/10</label>
+              <div className="slider-header">
+                <span className="label">Detail</span>
+                <span className="slider-value">{requirements.detail}/10</span>
+              </div>
               <input
                 type="range"
                 min="1"
@@ -204,7 +213,10 @@ const App: React.FC = () => {
             <div className="card">
               <h2 className="section-title">Recommended Filament</h2>
               <div className="filament-info">
-                <h3 className="filament-name">{recommendation.data.name}</h3>
+                <div className="filament-name-wrapper">
+                  <h3 className="filament-name">{recommendation.data.name}</h3>
+                  <span className="filament-score">{Math.round(recommendation.score > 10 ? 98 : recommendation.score * 10)}% Match</span>
+                </div>
                 <p className="filament-description">{recommendation.data.description}</p>
                 <div className="stats-grid">
                   <div className="stat-item">
